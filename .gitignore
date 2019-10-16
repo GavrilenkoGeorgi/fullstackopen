@@ -8,6 +8,9 @@
 /part1/anecdotes/.pnp
 /part1/anecdotes/.pnp.js
 /part1/courseinfo/node_modules
+/part2/courseinfo/node_modules
+/part2/courseinfoMk1
+/part2/courseinfoMk1/node_modules
 
 # testing
 /part1/unicafe/coverage
