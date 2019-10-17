@@ -12,6 +12,7 @@
 /part2/notes
 /part2/notes/node_modules
 /part2/phonebook/node_modules
+/part2/countries/node_modules
 
 # testing
 /part1/unicafe/coverage
