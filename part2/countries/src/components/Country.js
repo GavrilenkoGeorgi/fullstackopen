@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Country = ({ name, capital, population, languages, flag }) => {
+const Country = ({ name, capital, population, languages, flag, onClick }) => {
   if (capital) { // single country
     return (
       <>
@@ -21,7 +21,7 @@ const Country = ({ name, capital, population, languages, flag }) => {
       </>
     )
   } else { // list of countries
-    return <>{name}<br /></>
+    return <>{name} <button data-name={name} onClick={onClick}>show</button><br /></>
   }
 }
 

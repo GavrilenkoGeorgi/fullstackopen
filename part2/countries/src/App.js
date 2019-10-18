@@ -24,7 +24,11 @@ const App = () => {
 
   const filteredCountries = newFilter === ''
     ? countries
-    : countries.filter(country => country.name.toLowerCase().startsWith(newFilter))
+    : countries.filter(country => country.name.toLowerCase().includes(newFilter))
+
+  const showCoutryInfo = (event) => {
+    setNewFilter(event.target.dataset.name.toLowerCase())
+  }
 
   const countriesList = () => filteredCountries.map(country => {
     if (filteredCountries.length === 1) { // single country to display
@@ -44,6 +48,7 @@ const App = () => {
         <Country
           key={country.name}
           name={country.name}
+          onClick={showCoutryInfo}
         />
       )
     } else return [] // too many results, empty array
