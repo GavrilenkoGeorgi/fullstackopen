@@ -1,4 +1,5 @@
 import React from 'react'
+import Weather from './Weather'
 
 const Country = ({ name, capital, population, languages, flag, onClick }) => {
   if (capital) { // single country
@@ -18,6 +19,8 @@ const Country = ({ name, capital, population, languages, flag, onClick }) => {
           {languages}
         </ul>
         <img src={flag} width="150" alt="flag of the selected country" />
+        <br />
+        <Weather capital={capital} />
       </>
     )
   } else { // list of countries

@@ -13,6 +13,7 @@
 /part2/notes/node_modules
 /part2/phonebook/node_modules
 /part2/countries/node_modules
+/part2/countries/src/api_keys
 
 # testing
 /part1/unicafe/coverage
