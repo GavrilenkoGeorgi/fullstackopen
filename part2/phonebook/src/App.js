@@ -58,6 +58,13 @@ const App = () => {
             setNewName('')
             setNewNumber('')
           })
+          .catch(error => {
+            setNotificationMessage(error.response.data.error)
+            setNotificationType('error')
+            setTimeout(() => {
+              setNotificationMessage(null)
+            }, 5000)
+          })
       }
     } else {
       const personObject = {
@@ -77,6 +84,13 @@ const App = () => {
           }, 5000)
           setNewName('')
           setNewNumber('')
+        })
+        .catch(error => {
+          setNotificationMessage(error.response.data.error)
+          setNotificationType('error')
+          setTimeout(() => {
+            setNotificationMessage(null)
+          }, 5000)
         })
     }
   }

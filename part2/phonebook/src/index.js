@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 
+/*
 const notes = [
   {
     id: 1,
@@ -21,9 +22,9 @@ const notes = [
     date: '2019-05-30T19:20:14.298Z',
     important: true
   }
-]
+]*/
 
 ReactDOM.render(
-  <App notes={notes} />,
+  <App />,
   document.getElementById('root')
 )
