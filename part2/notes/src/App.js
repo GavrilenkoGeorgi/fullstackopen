@@ -9,7 +9,7 @@ import './index.css'
 import Togglable from './components/Togglable'
 import NoteForm from './components/NoteForm'
 
-const App = (props) => {
+const App = () => {
   const [notes, setNotes] = useState([])
   const [newNote, setNewNote] = useState('a new note')
   const [showAll, setShowAll] = useState(true)
@@ -83,7 +83,8 @@ const App = (props) => {
       })
       .catch(error => {
         setErrorMessage(
-          `Note '${note.content}' was already removed from server`
+          // `Note '${note.content}' was already removed from server` //??
+          `An error occured while deleting note ${error.message}`
         )
         setTimeout(() => {
           setErrorMessage(null)
@@ -116,8 +117,8 @@ const App = (props) => {
   }
 
   const loginForm = () => {
-    const hideWhenVisible = { display: loginVisible ? 'none' : ''}
-    const showWhenVisible = { display: loginVisible ? '' : 'none'}
+    const hideWhenVisible = { display: loginVisible ? 'none' : '' }
+    const showWhenVisible = { display: loginVisible ? '' : 'none' }
 
     return (
       <div>
