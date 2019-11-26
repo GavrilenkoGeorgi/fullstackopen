@@ -3,11 +3,11 @@ import Note from './components/Note'
 import Notification from './components/Notification'
 import Footer from './components/Footer'
 import LoginForm from './components/LoginForm'
-import noteService from './services/notes'
-import loginService from './services/login'
 import './index.css'
 import Togglable from './components/Togglable'
 import NoteForm from './components/NoteForm'
+import noteService from './services/notes'
+import loginService from './services/login'
 
 const App = () => {
   const [notes, setNotes] = useState([])
