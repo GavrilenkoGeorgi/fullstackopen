@@ -1,13 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { createAnec } from '../reducers/anecdoteReducer'
+import anecService from '../services/anecService'
 
 const AnecdoteForm = (props) => {
-  const addAnec = (event) => {
+  const addAnec = async (event) => {
     event.preventDefault()
     const content = event.target.anec.value
     event.target.anec.value = ''
-    props.createAnec(content)
+    const newAnec = await anecService.createNew(content)
+    props.createAnec(newAnec)
   }
 
   return (
@@ -22,7 +24,6 @@ const AnecdoteForm = (props) => {
     </>
   )
 }
-
 
 const mapStateToProps = (state) => {
   return {
