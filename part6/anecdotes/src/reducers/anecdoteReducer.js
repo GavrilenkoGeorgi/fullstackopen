@@ -1,3 +1,5 @@
+import anecService from '../services/anecService'
+
 const anecReducer = (state = [], action) => {
   switch (action.type) {
     case 'NEW_ANEC':
@@ -18,24 +20,33 @@ const anecReducer = (state = [], action) => {
   }
 }
 
-export const initializeAnecs = (anecs) => {
-  return {
-    type: 'INIT_ANECS',
-    data: anecs
+export const initializeAnecs = () => {
+  return async dispatch => {
+    const anecs = await anecService.getAll()
+    dispatch ({
+      type: 'INIT_ANECS',
+      data: anecs
+    })
   }
 }
 
-export const voteUp = (id) => {
-  return {
-    type: 'VOTE_UP',
-    data: { id }
+export const voteUp = content => {
+  return async dispatch => {
+    const updatedAnec = await anecService.voteUp(content)
+    dispatch({
+      type: 'VOTE_UP',
+      data: updatedAnec
+    })
   }
 }
 
-export const createAnec = (data) => {
-  return {
-    type: 'NEW_ANEC',
-    data
+export const createAnec = content => {
+  return async dispatch => {
+    const newAnec = await anecService.createNew(content)
+    dispatch({
+      type: 'NEW_ANEC',
+      data: newAnec
+    })
   }
 }
 

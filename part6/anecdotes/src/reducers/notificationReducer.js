@@ -1,9 +1,8 @@
-const defaultNotification = 'Nothing to see here'
-
-const notificationReducer = (state = defaultNotification, action) => {
+const notificationReducer = (state = '', action) => {
   switch (action.type) {
-    case 'INFO':
-      return `Voting for ${action.data}`
+    case 'SET_NOTIFICATION':
+      state = action.data
+      return state
     case 'RESET':
       return action.data
     default:
@@ -11,10 +10,18 @@ const notificationReducer = (state = defaultNotification, action) => {
   }
 }
 
-export const infoMessage = (message) => {
-  return {
-    type: 'INFO',
-    data: message
+export const setNotification = (message, time) => {
+  return dispatch => {
+    dispatch ({
+      type: 'SET_NOTIFICATION',
+      data: message
+    })
+    setTimeout(() => {
+      dispatch ({
+        type: 'SET_NOTIFICATION',
+        data: null
+      })
+    }, time * 1000)
   }
 }
 
