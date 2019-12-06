@@ -14,6 +14,11 @@
       "content": "custom note",
       "important": false,
       "id": 3
+    },
+    {
+      "content": "🧰🔑📗",
+      "important": false,
+      "id": 4
     }
   ]
 }
