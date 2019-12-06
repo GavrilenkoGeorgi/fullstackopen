@@ -31,14 +31,6 @@ export const createNote = content => {
     })
   }
 }
-/*
-export const toggleImportanceOf = (id) => {
-  return {
-    type: 'TOGGLE_IMPORTANCE',
-    data: { id }
-  }
-}
-*/
 
 export const toggleImportanceOf = (id) => {
   return async dispatch => {
