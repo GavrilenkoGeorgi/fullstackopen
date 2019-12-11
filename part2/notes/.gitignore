@@ -1,0 +1,4 @@
+build
+node_modules
+cypress/integration/examples.bak
+src/App.styled.js
